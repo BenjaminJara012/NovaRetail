@@ -1,0 +1,16 @@
+services:
+  postgres-productos:
+    image: postgres:17
+    container_name: novaretail-postgres-productos
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: novaretail_productos
+      POSTGRES_USER: novaretail
+      POSTGRES_PASSWORD: novaretail_dev
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_productos_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_productos_data:
