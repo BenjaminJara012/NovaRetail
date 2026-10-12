@@ -1,4 +1,4 @@
-package cl.novaretai.carrito.services;
+package cl.novaretail.carrito.services;
 
 import cl.novaretail.carrito.clients.ProductoClient;
 import cl.novaretail.carrito.dtos.AgregarItemRequestDTO;
