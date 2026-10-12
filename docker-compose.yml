@@ -28,6 +28,36 @@ services:
     volumes:
       - postgres_carrito_data:/var/lib/postgresql/data
 
+  # Base de datos de usuarios
+  postgres-usuarios:
+    image: postgres:17
+    container_name: novaretail-postgres-usuarios
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: novaretail_usuarios
+      POSTGRES_USER: novaretail
+      POSTGRES_PASSWORD: novaretail_dev
+    ports:
+      - "5435:5432"
+    volumes:
+      - postgres_usuarios_data:/var/lib/postgresql/data
+
+  # Base de datos de pedidos
+  postgres-pedidos:
+    image: postgres:17
+    container_name: novaretail-postgres-pedidos
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: novaretail_pedidos
+      POSTGRES_USER: novaretail
+      POSTGRES_PASSWORD: novaretail_dev
+    ports:
+      - "5436:5432"
+    volumes:
+      - postgres_pedidos_data:/var/lib/postgresql/data
+
 volumes:
   postgres_productos_data:
   postgres_carrito_data:
+  postgres_usuarios_data:
+  postgres_pedidos_data:
