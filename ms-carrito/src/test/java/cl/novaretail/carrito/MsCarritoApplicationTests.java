@@ -1,4 +1,4 @@
-package cl.novaretai.carrito;
+package cl.novaretail.carrito;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
